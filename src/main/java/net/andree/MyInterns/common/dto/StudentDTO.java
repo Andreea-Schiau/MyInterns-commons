@@ -1,11 +1,17 @@
 package net.andree.MyInterns.common.dto;
 
-public class StudentDTO {
+import java.io.Serializable;
 
+public class StudentDTO implements Serializable{
+
+	private static final long serialVersionUID = -2279729627589934230L;
+	private Long id;
 	private String name;
 	private String surname;
 	private String description;
 	private String email;
+
+	UserDTO userDTO;
 
 	public StudentDTO() {
 	}
@@ -24,6 +30,26 @@ public class StudentDTO {
 		this.surname = surname;
 		this.description = description;
 		this.email = email;
+	}
+
+	public StudentDTO(String name, String surname, String description, String email, UserDTO userDTO) {
+		this.name = name;
+		this.surname = surname;
+		this.description = description;
+		this.email = email;
+		this.userDTO = userDTO;
+	}
+
+	public void setUserDTO(UserDTO userDTO) {
+		this.userDTO = userDTO;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
