@@ -1,7 +1,10 @@
 package net.andree.MyInterns.common.dto;
 
-public class MentorDTO {
+import java.io.Serializable;
 
+public class MentorDTO implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String name;
 	private String username;

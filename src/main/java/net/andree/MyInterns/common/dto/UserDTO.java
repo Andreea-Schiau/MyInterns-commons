@@ -1,8 +1,10 @@
 package net.andree.MyInterns.common.dto;
 
-public class UserDTO {
+import java.io.Serializable;
 
-	private Long id;
+public class UserDTO implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
 	private Boolean isMentor;
@@ -10,19 +12,15 @@ public class UserDTO {
 	public UserDTO() {
 	}
 
-	public UserDTO(Long id, String username, String password, Boolean isMentor) {
-		this.id = id;
+	public UserDTO(String username, String password, Boolean isMentor) {
 		this.username = username;
 		this.password = password;
 		this.isMentor = isMentor;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public UserDTO(String username, String password) {
+		this.username = username;
+		this.password = password;
 	}
 
 	public String getUsername() {
